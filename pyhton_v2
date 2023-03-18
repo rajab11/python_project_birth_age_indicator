@@ -1,0 +1,21 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load Excel file into a pandas dataframe
+df = pd.read_excel(
+    r'C:\Users\rajab\OneDrive\Documents\python_projects\project_#1\003_3.xls', sheet_name='esas')
+
+# Get the column names of the dataframe
+column_names = df.columns.tolist()
+
+
+# Create a figure with subplots for each column
+fig, axs = plt.subplots(len(column_names), figsize=(8, 8))
+
+# Iterate over each column and create a linear graph
+for i, column_name in enumerate(column_names):
+
+    axs[i].set_xlabel(column_name)
+
+plt.tight_layout()
+plt.show()
